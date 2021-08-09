@@ -1,0 +1,36 @@
+
+
+revapi1.revstart();
+
+var api = revapi1;
+var playButton  = '.play-button';
+var pauseButton = '.pause-button';
+var current     = '.current';
+var sliderDiv   = '#rev_slider_1_1_wrapper';
+
+
+window.pauseRevSlider = function() {
+
+    api.revpause();
+    jQuery('.tp-caption').each(function() {
+
+      
+        var anime = jQuery(this).data('timeline');
+        if(anime) anime.pause();
+          
+
+    });
+
+};
+
+window.resumeRevSlider = function() {
+
+    api.revresume();
+   jQuery('.tp-caption').each(function() {
+
+        var anime = jQuery(this).data('timeline');
+        if(anime) anime.resume();
+    });
+
+};
+
